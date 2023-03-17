@@ -1,7 +1,4 @@
-{{ $summary := .Get 0 }} 
-{{ $content := .Get 1 }}
-
 <details>
-    <summary>{{$summary}}</summary>
-    <p>{{$content}}</p>
-</details>
+    <summary>{{ (.Get 0) | markdownify }}</summary>
+    {{ .Inner | markdownify }}
+  </details>
